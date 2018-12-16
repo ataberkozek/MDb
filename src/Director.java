@@ -2,10 +2,8 @@ import java.util.ArrayList;
 
 public class Director {
 
-    private String name;
+    private String name, bio, born_date;
     private int age;
-    private String bio;
-    private String born_date;
     private ArrayList<Movie> movies;
     private boolean hasWonOscar;
 
@@ -16,9 +14,7 @@ public class Director {
         movies = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public int getAge() {
         return age;

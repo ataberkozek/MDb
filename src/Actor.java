@@ -2,10 +2,8 @@ import java.util.ArrayList;
 
 public class Actor {
 
-    private String name;
+    private String name, bio, born_date;
     private int age;
-    private String bio;
-    private String born_date;
     private ArrayList<Movie> movies;
     private boolean hasWonOscar;
 
@@ -51,7 +49,11 @@ public class Actor {
         this.hasWonOscar = hasWonOscar;
     }
 
+    // Changed
     public void printMovies(){
-        System.out.println(movies.toString());
+        for(Movie movie : movies) {
+            System.out.println(movie.getName());
+        }
     }
+
 }
