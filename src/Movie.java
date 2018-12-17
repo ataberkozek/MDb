@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Movie {
     private String name;
     private double runtime, rating;
-    private ArrayList<String> comments;
+    private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
     private Director director;
 
@@ -29,7 +29,7 @@ public class Movie {
 
     public double getRating() { return rating; }
 
-    public ArrayList<String> getComments() { return comments; }
+    public ArrayList<Comment> getComments() { return comments; }
 
     public ArrayList<Actor> getActors() { return actors; }
 
@@ -39,7 +39,7 @@ public class Movie {
         actors.add(actor);
     }
 
-    public void addComment(String comment){
+    public void addComment(Comment comment){
         comments.add(comment);
     }
 
