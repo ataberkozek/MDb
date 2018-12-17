@@ -27,9 +27,7 @@ public class Director {
         return age;
     }
 
-    public String getBio() {
-        return bio;
-    }
+    public String getBio() { return bio; }
 
     public String getBorn_date() {
         return born_date;
@@ -48,5 +46,9 @@ public class Director {
         for (Movie movie : movies) {
             System.out.println(movie.getName());
         }
+    }
+
+    public void addMovie(Movie movie) {
+        movies.add(movie);
     }
 }

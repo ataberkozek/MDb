@@ -35,6 +35,14 @@ public class Movie {
 
     public Director getDirector() { return director; }
 
+    public void addActor(Actor actor){
+        actors.add(actor);
+    }
+
+    public void addComment(String comment){
+        comments.add(comment);
+    }
+
     public void printMovie() {
         System.out.println("Name Of The Movie: " + name + "\n" + "Runtime Of The Movie: " + runtime + "\n" + "Director Of The Movie: " +
                 director.getName() + "\n" + "Rating Of The Movie: " + rating);
