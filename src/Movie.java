@@ -1,24 +1,20 @@
 import java.util.ArrayList;
 
 public class Movie {
-    private String name;
+    private String name, releaseDate, gender;
     private double runtime, rating;
     private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
     private Director director;
 
 
-    public Movie(String name, double runtime, double rating, Director director) {
+    public Movie(String name, double runtime, double rating, Director director, String releaseDate, String gender) {
         this.name = name;
         this.runtime = runtime;
         this.rating = rating;
         this.director = director;
-        actors = new ArrayList<>();
-        comments = new ArrayList<>();
-    }
-
-    // Gerek var mı ??
-    public Movie() {
+        this.releaseDate = releaseDate;
+        this.gender = gender;
         actors = new ArrayList<>();
         comments = new ArrayList<>();
     }
@@ -45,7 +41,8 @@ public class Movie {
 
     public void printMovie() {
         System.out.println("Name Of The Movie: " + name + "\n" + "Runtime Of The Movie: " + runtime + "\n" + "Director Of The Movie: " +
-                director.getName() + "\n" + "Rating Of The Movie: " + rating);
+                director.getName() + "\n" + "Rating Of The Movie: " + rating + "\n" + "Release Date Of The Movie: " + releaseDate +
+        "\n" + "Gender Of The Movie: " + gender);
         printActors();
         System.out.print("\n");
         printComments();
@@ -65,9 +62,9 @@ public class Movie {
         System.out.print("Comments Of The Movie: ");
         for (int i = 0; i < comments.size(); i++) {
             if (i == comments.size() - 1)
-                System.out.print(comments.get(i));
+                System.out.print(comments.get(i).getComment());
             else
-                System.out.print(comments.get(i) + ", ");
+                System.out.print(comments.get(i).getComment() + ", ");
         }
     }
 }

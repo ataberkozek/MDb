@@ -14,11 +14,6 @@ public class Director {
         movies = new ArrayList<>();
     }
 
-    // Gerek var mı ??
-    public Director() {
-        movies = new ArrayList<>();
-    }
-
     public String getName() {
         return name;
     }
