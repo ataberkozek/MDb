@@ -6,6 +6,7 @@ public class Gui {
     public static void main(String args[]) {
 
         JFrame frame = new JFrame("Project");
+        Movie venom = new Movie("Venom", 120, 7.8, null, "12.08.2018", "Sci-fi" );
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 500);
