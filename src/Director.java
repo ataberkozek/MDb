@@ -5,7 +5,7 @@ public class Director {
     private String name, bio, born_date;
     private int age;
     private ArrayList<Movie> movies;
-    private boolean hasWonOscar;
+    private boolean hasWonOscar; // String olarak mı tutsak varsa kazandığı oscarları ?
 
     public Director(String name, int age, String born_date) {
         this.name = name;
@@ -14,7 +14,14 @@ public class Director {
         movies = new ArrayList<>();
     }
 
-    public String getName() { return name; }
+    // Gerek var mı ??
+    public Director() {
+        movies = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public int getAge() {
         return age;
@@ -36,7 +43,10 @@ public class Director {
         this.bio = bio;
     }
 
-    public void printMovies(){
-        System.out.println(movies);
+    // Changed.
+    public void printMovies() {
+        for (Movie movie : movies) {
+            System.out.println(movie.getName());
+        }
     }
 }

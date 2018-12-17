@@ -15,7 +15,10 @@ public class Actor {
         movies = new ArrayList<>();
     }
 
-    public Actor() {movies = new ArrayList<>();}
+    // Gerek var mı ??
+    public Actor() {
+        movies = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -50,10 +53,9 @@ public class Actor {
     }
 
     // Changed
-    public void printMovies(){
-        for(Movie movie : movies) {
+    public void printMovies() {
+        for (Movie movie : movies) {
             System.out.println(movie.getName());
         }
     }
-
 }
