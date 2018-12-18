@@ -6,7 +6,7 @@ public class Movie {
     private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
     private Director director;
-    //aaaaaaaaa
+    //aaaaaaaaaaaaaaaaa
 
     public Movie(String name, double runtime, double rating, Director director, String releaseDate, String genre) {
         this.name = name;
