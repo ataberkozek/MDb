@@ -6,7 +6,7 @@ public class Movie {
     private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
     private Director director;
-
+    //aaaaaaaaa
 
     public Movie(String name, double runtime, double rating, Director director, String releaseDate, String genre) {
         this.name = name;
@@ -46,7 +46,7 @@ public class Movie {
     public void printMovie() {
         System.out.println("Name Of The Movie: " + name + "\n" + "Runtime Of The Movie: " + runtime + "\n" + "Director Of The Movie: " +
                 director.getName() + "\n" + "Rating Of The Movie: " + rating + "\n" + "Release Date Of The Movie: " + releaseDate +
-        "\n" + "Gender Of The Movie: " + genre);
+        "\n" + "Genre Of The Movie: " + genre);
         printActors();
         System.out.print("\n");
         printComments();
