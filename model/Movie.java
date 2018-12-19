@@ -1,52 +1,69 @@
 import java.util.ArrayList;
 
-public class Movie {
-    private String name, releaseDate, genre;
-    private double runtime, rating;
+public final class Movie {
+    private final String name, releaseDate;
+    private final Genre genre;
+    private final Rating rating;
+    private final double runtime;
     private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
-    private Director director;
-    //aaaaaaaaaaaaaaaaa
+    private final Director director;
 
-    public Movie(String name, double runtime, double rating, Director director, String releaseDate, String genre) {
-        this.name = name;
-        this.runtime = runtime;
-        this.rating = rating;
-        this.director = director;
-        this.releaseDate = releaseDate;
-        this.genre = genre;
+    public Movie(Builder builder) {
+        this.name = builder.name;
+        this.runtime = builder.runtime;
+        this.director = builder.director;
+        this.releaseDate = builder.releaseDate;
+        this.genre = builder.genre;
+        this.rating = builder.rating;
         actors = new ArrayList<>();
         comments = new ArrayList<>();
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public double getRuntime() { return runtime; }
+    public double getRuntime() {
+        return runtime;
+    }
 
-    public double getRating() { return rating; }
+    public ArrayList<Comment> getComments() {
+        return comments;
+    }
 
-    public ArrayList<Comment> getComments() { return comments; }
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
 
-    public ArrayList<Actor> getActors() { return actors; }
+    public Director getDirector() {
+        return director;
+    }
 
-    public Director getDirector() { return director; }
+    public String getReleaseDate() {
+        return releaseDate;
+    }
 
-    public String getReleaseDate() { return releaseDate; }
+    public Genre getGenre() {
+        return genre;
+    }
 
-    public String getGenre() { return genre; }
+    public Rating getRating() {
+        return rating;
+    }
 
-    public void addActor(Actor actor){
+    public void addActor(Actor actor) {
         actors.add(actor);
     }
 
-    public void addComment(Comment comment){
+    public void addComment(Comment comment) {
         comments.add(comment);
     }
 
     public void printMovie() {
         System.out.println("Name Of The Movie: " + name + "\n" + "Runtime Of The Movie: " + runtime + "\n" + "Director Of The Movie: " +
                 director.getName() + "\n" + "Rating Of The Movie: " + rating + "\n" + "Release Date Of The Movie: " + releaseDate +
-        "\n" + "Genre Of The Movie: " + genre);
+                "\n" + "Genre Of The Movie: " + genre);
         printActors();
         System.out.print("\n");
         printComments();
@@ -71,6 +88,48 @@ public class Movie {
                 System.out.print(comments.get(i).getComment() + ", ");
         }
     }
+
+
+    public static class Builder {
+
+        private final String name;
+        private String releaseDate;
+        private final Genre genre;
+        private Rating rating;
+        private double runtime;
+        private Director director;
+
+        public Builder(Genre genre, String name) {
+            if (genre == null || name == null) {
+                throw new IllegalArgumentException("Name or genre cannot be empty");
+            }
+            this.genre = genre;
+            this.name = name;
+        }
+
+        public Builder withReleaseDate(String releaseDate) {
+            this.releaseDate = releaseDate;
+            return this;
+        }
+
+        public Builder withRating(Rating rating) {
+            this.rating = rating;
+            return this;
+        }
+
+        public Builder withRuntime(double runtime) {
+            this.runtime = runtime;
+            return this;
+        }
+
+        public Builder withDirector(Director director) {
+            this.director = director;
+            return this;
+        }
+
+        public Movie build() {
+            return new Movie(this);
+        }
+    }
+
 }
-
-
