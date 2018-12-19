@@ -13,11 +13,8 @@ public class Gui {
         frame.setSize(800, 500);
         frame.setMinimumSize(new Dimension(800, 500));
 
-        JPanel SearchPanel = new SearchPanel();
+        JPanel SearchPanel = new View();
         frame.add(SearchPanel);
-
-        frame.pack();
-        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

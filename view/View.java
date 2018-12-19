@@ -7,18 +7,19 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-public class SearchPanel extends JPanel {
+public class View extends JPanel {
     private JTextField searchField;
 
-    public SearchPanel() {
+    public View() {
         super();
         this.setLayout(null);
 
         JLabel mdbLabel = new JLabel("MDb");
+        mdbLabel.setForeground(Color.RED);
         mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
         mdbLabel.setBounds(0, 0, 100, 50);
 
-        searchField = new JTextField("Fast");
+        searchField = new JTextField("Find Movies...");
         searchField.setBounds(150, 70, 500, 20);
 
         // Search button una action handler koycaz o an searchField ın içinde yazan filmi bulup yeni bir Movie Panel açıp
@@ -58,13 +59,18 @@ public class SearchPanel extends JPanel {
             String stringToSearch = searchField.getText();
 
             // Search Operation...
+            int matchedMovieCount = 0;
             for (int i = 0; i < movieList.size(); i++) {
                 if (stringToSearch.length() < movieList.get(i).length()) {
                     if (stringToSearch.equalsIgnoreCase(movieList.get(i).substring(0, stringToSearch.length()))) {
+                        matchedMovieCount++;
                         Object[] a = {movieList.get(i)};
                         model.addRow(a);
                     }
                 }
+            }
+            if(matchedMovieCount == 0) {
+                JOptionPane.showMessageDialog(panel,"No Movie Found As: " + stringToSearch,"Alert",JOptionPane.WARNING_MESSAGE);
             }
 
 
@@ -110,14 +116,17 @@ public class SearchPanel extends JPanel {
             panel.updateUI();
 
             JLabel mdbLabel = new JLabel("MDb");
+            mdbLabel.setForeground(Color.RED);
             mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
             mdbLabel.setBounds(0, 0, 100, 50);
 
             JLabel ratingLabel = new JLabel("Rating: " + movie.getRating());
+            ratingLabel.setForeground(Color.RED);
             ratingLabel.setFont(new Font("Serif", Font.ITALIC, 20));
             ratingLabel.setBounds(650, 10, 100, 50);
 
             JLabel movieNameLabel = new JLabel(movie.getName());
+            movieNameLabel.setForeground(Color.blue);
             movieNameLabel.setFont(new Font("Serif", Font.PLAIN, 25));
             movieNameLabel.setBounds(250, 60, 800, 50);
 
@@ -136,6 +145,7 @@ public class SearchPanel extends JPanel {
             actorsLabel.setBounds(0, 200, 800, 50);
 
             JLabel commentsLabel = new JLabel("Comments: ");
+            commentsLabel.setForeground(Color.blue);
             commentsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
             commentsLabel.setBounds(0, 240, 800, 50);
 
@@ -148,7 +158,6 @@ public class SearchPanel extends JPanel {
             seeMoreButton.setFont(new Font("Serif", Font.PLAIN, 15));
             seeMoreButton.setBounds(0, 320, 180, 30);
             seeMoreButton.addActionListener(new handler3(panel, seeMoreButton, movie));
-
 
             panel.add(mdbLabel);
             panel.add(ratingLabel);
@@ -209,7 +218,6 @@ public class SearchPanel extends JPanel {
                 comment.setBounds(0, y, 800, 50);
                 panel.add(comment);
             }
-
         }
     }
 }
