@@ -5,8 +5,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.*;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
 public class SearchPanel extends JPanel {
@@ -55,7 +53,7 @@ public class SearchPanel extends JPanel {
             searchTable.addMouseListener(new handler2(searchTable, panel));
 
             JScrollPane scrollPane = new JScrollPane(searchTable);
-            scrollPane.setBounds(0, 100, 800, 300);
+            scrollPane.setBounds(0, 100, 800, 400);
 
             String stringToSearch = searchField.getText();
 
