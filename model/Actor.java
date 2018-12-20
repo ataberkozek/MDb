@@ -47,7 +47,6 @@ public class Actor {
         this.hasWonOscar = hasWonOscar;
     }
 
-    // Changed
     public void printMovies() {
         for (Movie movie : movies) {
             System.out.println(movie.getName());

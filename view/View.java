@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-
 public class View extends JPanel {
     private JTextField searchField;
     private JPanel mainPanel = this;
@@ -22,11 +21,9 @@ public class View extends JPanel {
         mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
         mdbLabel.setBounds(0, 0, 100, 50);
 
-        searchField = new JTextField("F");
+        searchField = new JTextField("Find Movies...");
         searchField.setBounds(150, 70, 500, 20);
 
-        // Search button una action handler koycaz o an searchField ın içinde yazan filmi bulup yeni bir Movie Panel açıp
-        // Movie panel a o isimdeki movie yi vererek kullanıcak.
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(655, 70, 75, 20);
         searchButton.addActionListener(new handler(this));
@@ -46,22 +43,19 @@ public class View extends JPanel {
 
         public void actionPerformed(ActionEvent e) {
 
-
-
             ArrayList<String> movieList = new ArrayList<>();
             movieList.add(movie.getName());
 
             String[] columns = {"Search Results"};
             DefaultTableModel model1 = new DefaultTableModel(columns, 0);
             JTable searchTable = new JTable(model1);
-            searchTable.addMouseListener(new handler2(searchTable, panel));
+            searchTable.addMouseListener(new handler2(panel));
 
             JScrollPane scrollPane = new JScrollPane(searchTable);
             scrollPane.setBounds(0, 100, 800, 400);
 
             String stringToSearch = searchField.getText();
 
-            // Search Operation...
             int matchedMovieCount = 0;
             for (int i = 0; i < movieList.size(); i++) {
                 if (stringToSearch.length() < movieList.get(i).length()) {
@@ -74,31 +68,21 @@ public class View extends JPanel {
             }
             if (matchedMovieCount == 0) {
                 JOptionPane.showMessageDialog(panel, "No Movie Found As: " + stringToSearch, "Alert", JOptionPane.WARNING_MESSAGE);
+                System.exit(0);
             }
-
-
             panel.add(scrollPane);
         }
     }
 
-    // searchden sonra filmlerden birine tıklanınca o filmin ismini alıyor ve simdilik o isim ile movie objesi olusturuyor
     public class handler2 implements MouseListener {
-        private JTable table;
         private JPanel panel;
 
-        public handler2(JTable table, JPanel panel) {
-            this.table = table;
+        public handler2(JPanel panel) {
             this.panel = panel;
         }
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            int column = 0;
-            int row = table.getSelectedRow();
-            String selectedMovieName = table.getModel().getValueAt(row, column).toString();
-
-
-
 
             Comment a = new Comment("egowic");
             Comment b = new Comment("atosberk");
@@ -155,7 +139,7 @@ public class View extends JPanel {
             JButton seeMoreButton = new JButton("See More Comments...");
             seeMoreButton.setFont(new Font("Serif", Font.PLAIN, 15));
             seeMoreButton.setBounds(0, 420, 180, 30);
-            seeMoreButton.addActionListener(new handler3(panel, seeMoreButton, movie, model));
+            seeMoreButton.addActionListener(new seeMoreCommentsHandler(panel, seeMoreButton, movie, model));
 
             JButton newSearchButton = new JButton("New Search");
             newSearchButton.setFont(new Font("Serif", Font.PLAIN, 15));
@@ -199,13 +183,13 @@ public class View extends JPanel {
         }
     }
 
-    public class handler3 implements ActionListener {
+    public class seeMoreCommentsHandler implements ActionListener {
         private JPanel panel;
         private JButton button;
         private Movie movie;
         private DefaultTableModel model;
 
-        public handler3(JPanel panel, JButton button, Movie movie, DefaultTableModel model) {
+        public seeMoreCommentsHandler(JPanel panel, JButton button, Movie movie, DefaultTableModel model) {
             this.panel = panel;
             this.button = button;
             this.movie = movie;
@@ -236,11 +220,9 @@ public class View extends JPanel {
             mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
             mdbLabel.setBounds(0, 0, 100, 50);
 
-            searchField = new JTextField("F");
+            searchField = new JTextField("Find Movies...");
             searchField.setBounds(150, 70, 500, 20);
 
-            // Search button una action handler koycaz o an searchField ın içinde yazan filmi bulup yeni bir Movie Panel açıp
-            // Movie panel a o isimdeki movie yi vererek kullanıcak.
             JButton searchButton = new JButton("Search");
             searchButton.setBounds(655, 70, 75, 20);
             searchButton.addActionListener(new handler(mainPanel));
@@ -248,7 +230,6 @@ public class View extends JPanel {
             mainPanel.add(searchButton);
             mainPanel.add(mdbLabel);
             mainPanel.add(searchField);
-
         }
     }
 }

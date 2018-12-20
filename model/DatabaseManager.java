@@ -1,8 +1,6 @@
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-
-import java.awt.event.ActionEvent;
 import java.io.FileReader;
 
 public class DatabaseManager {

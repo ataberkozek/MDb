@@ -135,5 +135,4 @@ public final class Movie {
             return new Movie(this);
         }
     }
-
 }
