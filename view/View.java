@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+
 public class View extends JPanel {
     private JTextField searchField;
+    private JPanel mainPanel = this;
 
     public View() {
         super();
@@ -69,8 +71,8 @@ public class View extends JPanel {
                     }
                 }
             }
-            if(matchedMovieCount == 0) {
-                JOptionPane.showMessageDialog(panel,"No Movie Found As: " + stringToSearch,"Alert",JOptionPane.WARNING_MESSAGE);
+            if (matchedMovieCount == 0) {
+                JOptionPane.showMessageDialog(panel, "No Movie Found As: " + stringToSearch, "Alert", JOptionPane.WARNING_MESSAGE);
             }
 
 
@@ -163,6 +165,7 @@ public class View extends JPanel {
             JButton newSearchButton = new JButton("New Search");
             newSearchButton.setFont(new Font("Serif", Font.PLAIN, 15));
             newSearchButton.setBounds(600, 420, 180, 30);
+            newSearchButton.addActionListener(new handler4());
 
             panel.add(mdbLabel);
             panel.add(ratingLabel);
@@ -206,21 +209,55 @@ public class View extends JPanel {
         private JButton button;
         private Movie movie;
         private DefaultTableModel model;
+
         public handler3(JPanel panel, JButton button, Movie movie, DefaultTableModel model) {
             this.panel = panel;
             this.button = button;
             this.movie = movie;
             this.model = model;
         }
+
         public void actionPerformed(ActionEvent e) {
             panel.remove(button);
             panel.updateUI();
 
-            for(int i = 1; i < movie.getComments().size(); i++) {
+            for (int i = 1; i < movie.getComments().size(); i++) {
                 Object[] comment = {movie.getComments().get(i).getNickname() + ": "
                         + movie.getComments().get(i).getComment()};
                 model.addRow(comment);
             }
         }
     }
+
+    public class handler4 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            mainPanel.setLayout(null);
+            mainPanel.removeAll();
+            mainPanel.updateUI();
+
+            JLabel mdbLabel = new JLabel("MDb");
+            mdbLabel.setForeground(Color.RED);
+            mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
+            mdbLabel.setBounds(0, 0, 100, 50);
+
+            searchField = new JTextField("F");
+            searchField.setBounds(150, 70, 500, 20);
+
+            // Search button una action handler koycaz o an searchField ın içinde yazan filmi bulup yeni bir Movie Panel açıp
+            // Movie panel a o isimdeki movie yi vererek kullanıcak.
+            JButton searchButton = new JButton("Search");
+            searchButton.setBounds(655, 70, 75, 20);
+            searchButton.addActionListener(new handler(mainPanel));
+
+            mainPanel.add(searchButton);
+            mainPanel.add(mdbLabel);
+            mainPanel.add(searchField);
+
+        }
+    }
 }
+
+
+
+
