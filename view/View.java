@@ -26,7 +26,7 @@ public class View extends JPanel {
 
         JButton searchButton = new JButton("Search");
         searchButton.setBounds(655, 70, 75, 20);
-        searchButton.addActionListener(new handler(this));
+        searchButton.addActionListener(new searchHandler(this));
 
         this.add(searchButton);
         this.add(mdbLabel);
@@ -34,10 +34,10 @@ public class View extends JPanel {
 
     }
 
-    public class handler implements ActionListener {
+    public class searchHandler implements ActionListener {
         private JPanel panel;
 
-        public handler(JPanel panel) {
+        public searchHandler(JPanel panel) {
             this.panel = panel;
         }
 
@@ -49,7 +49,7 @@ public class View extends JPanel {
             String[] columns = {"Search Results"};
             DefaultTableModel model1 = new DefaultTableModel(columns, 0);
             JTable searchTable = new JTable(model1);
-            searchTable.addMouseListener(new handler2(panel));
+            searchTable.addMouseListener(new selectMovieHandler(panel));
 
             JScrollPane scrollPane = new JScrollPane(searchTable);
             scrollPane.setBounds(0, 100, 800, 400);
@@ -74,10 +74,10 @@ public class View extends JPanel {
         }
     }
 
-    public class handler2 implements MouseListener {
+    public class selectMovieHandler implements MouseListener {
         private JPanel panel;
 
-        public handler2(JPanel panel) {
+        public selectMovieHandler(JPanel panel) {
             this.panel = panel;
         }
 
@@ -144,7 +144,7 @@ public class View extends JPanel {
             JButton newSearchButton = new JButton("New Search");
             newSearchButton.setFont(new Font("Serif", Font.PLAIN, 15));
             newSearchButton.setBounds(600, 420, 180, 30);
-            newSearchButton.addActionListener(new handler4());
+            newSearchButton.addActionListener(new newSearchHandler());
 
             panel.add(mdbLabel);
             panel.add(ratingLabel);
@@ -208,7 +208,7 @@ public class View extends JPanel {
         }
     }
 
-    public class handler4 implements ActionListener {
+    public class newSearchHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
             mainPanel.setLayout(null);
@@ -225,7 +225,7 @@ public class View extends JPanel {
 
             JButton searchButton = new JButton("Search");
             searchButton.setBounds(655, 70, 75, 20);
-            searchButton.addActionListener(new handler(mainPanel));
+            searchButton.addActionListener(new searchHandler(mainPanel));
 
             mainPanel.add(searchButton);
             mainPanel.add(mdbLabel);
