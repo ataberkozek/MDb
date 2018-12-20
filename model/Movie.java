@@ -5,9 +5,10 @@ public final class Movie {
     private final Genre genre;
     private final Rating rating;
     private final double runtime;
+    private final Director director;
     private ArrayList<Comment> comments;
     private ArrayList<Actor> actors;
-    private final Director director;
+
 
     public Movie(Builder builder) {
         this.name = builder.name;
@@ -18,6 +19,7 @@ public final class Movie {
         this.rating = builder.rating;
         actors = new ArrayList<>();
         comments = new ArrayList<>();
+
     }
 
     public String getName() {
@@ -99,12 +101,14 @@ public final class Movie {
         private double runtime;
         private Director director;
 
+
         public Builder(String releaseDate, String name) {
             if (releaseDate == null || name == null) {
                 throw new IllegalArgumentException("Name or release date cannot be empty");
             }
             this.releaseDate = releaseDate;
             this.name = name;
+
         }
 
         public Builder withGenre(Genre genre) {

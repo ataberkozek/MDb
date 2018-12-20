@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Director {
 
     private String name, bio, born_date;
-    private int age;
+    private double age;
     private ArrayList<Movie> movies;
     private boolean hasWonOscar; // String olarak mı tutsak varsa kazandığı oscarları ?
 
-    public Director(String name, int age, String born_date) {
+    public Director(String name, double age, String born_date) {
         this.name = name;
         this.age = age;
         this.born_date = born_date;
@@ -18,7 +18,7 @@ public class Director {
         return name;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
 
@@ -45,5 +45,9 @@ public class Director {
 
     public void addMovie(Movie movie) {
         movies.add(movie);
+    }
+
+    public void printDirector(){
+        System.out.println("Name: "+ name + " age: "+age+" born date: "+born_date);
     }
 }

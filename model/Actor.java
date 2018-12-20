@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class Actor {
 
     private String name, bio, born_date;
-    private int age;
+    private double age;
     private ArrayList<Movie> movies;
     private boolean hasWonOscar;
 
 
-    public Actor(String name, int age, String born_date) {
+    public Actor(String name, double age, String born_date) {
         this.name = name;
         this.age = age;
         this.born_date = born_date;
@@ -19,7 +19,7 @@ public class Actor {
         return name;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
 
