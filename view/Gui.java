@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-// Onemli not: src deki movie ye falan ulasmak icin herhangi bir import vs gerekmiyor.
 public class Gui {
     public static void main(String args[]) {
 

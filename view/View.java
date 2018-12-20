@@ -19,7 +19,7 @@ public class View extends JPanel {
         mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
         mdbLabel.setBounds(0, 0, 100, 50);
 
-        searchField = new JTextField("Find Movies...");
+        searchField = new JTextField("F");
         searchField.setBounds(150, 70, 500, 20);
 
         // Search button una action handler koycaz o an searchField ın içinde yazan filmi bulup yeni bir Movie Panel açıp
@@ -49,8 +49,8 @@ public class View extends JPanel {
             movieList.add("Fast and the Furious 3");
 
             String[] columns = {"Search Results"};
-            DefaultTableModel model = new DefaultTableModel(columns, 0);
-            JTable searchTable = new JTable(model);
+            DefaultTableModel model1 = new DefaultTableModel(columns, 0);
+            JTable searchTable = new JTable(model1);
             searchTable.addMouseListener(new handler2(searchTable, panel));
 
             JScrollPane scrollPane = new JScrollPane(searchTable);
@@ -65,7 +65,7 @@ public class View extends JPanel {
                     if (stringToSearch.equalsIgnoreCase(movieList.get(i).substring(0, stringToSearch.length()))) {
                         matchedMovieCount++;
                         Object[] a = {movieList.get(i)};
-                        model.addRow(a);
+                        model1.addRow(a);
                     }
                 }
             }
@@ -144,20 +144,25 @@ public class View extends JPanel {
             actorsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
             actorsLabel.setBounds(0, 200, 800, 50);
 
-            JLabel commentsLabel = new JLabel("Comments: ");
-            commentsLabel.setForeground(Color.blue);
-            commentsLabel.setFont(new Font("Serif", Font.PLAIN, 20));
-            commentsLabel.setBounds(0, 240, 800, 50);
+            String[] columns = {"Comments"};
+            DefaultTableModel model = new DefaultTableModel(columns, 0);
+            JTable searchTable = new JTable(model);
 
-            JLabel comment1 = new JLabel(movie.getComments().get(0).getNickname() + ": "
-                    + movie.getComments().get(0).getComment());
-            comment1.setFont(new Font("Serif", Font.PLAIN, 20));
-            comment1.setBounds(0, 280, 800, 50);
+            JScrollPane scrollPane = new JScrollPane(searchTable);
+            scrollPane.setBounds(0, 260, 800, 150);
+
+            Object[] comment = {movie.getComments().get(0).getNickname() + ": "
+                    + movie.getComments().get(0).getComment()};
+            model.addRow(comment);
 
             JButton seeMoreButton = new JButton("See More Comments...");
             seeMoreButton.setFont(new Font("Serif", Font.PLAIN, 15));
-            seeMoreButton.setBounds(0, 320, 180, 30);
-            seeMoreButton.addActionListener(new handler3(panel, seeMoreButton, movie));
+            seeMoreButton.setBounds(0, 420, 180, 30);
+            seeMoreButton.addActionListener(new handler3(panel, seeMoreButton, movie, model));
+
+            JButton newSearchButton = new JButton("New Search");
+            newSearchButton.setFont(new Font("Serif", Font.PLAIN, 15));
+            newSearchButton.setBounds(600, 420, 180, 30);
 
             panel.add(mdbLabel);
             panel.add(ratingLabel);
@@ -165,9 +170,9 @@ public class View extends JPanel {
             panel.add(basicInfoLabel);
             panel.add(directorLabel);
             panel.add(actorsLabel);
-            panel.add(commentsLabel);
-            panel.add(comment1);
+            panel.add(scrollPane);
             panel.add(seeMoreButton);
+            panel.add(newSearchButton);
         }
 
         @Override
@@ -200,23 +205,21 @@ public class View extends JPanel {
         private JPanel panel;
         private JButton button;
         private Movie movie;
-        public handler3(JPanel panel, JButton button, Movie movie) {
+        private DefaultTableModel model;
+        public handler3(JPanel panel, JButton button, Movie movie, DefaultTableModel model) {
             this.panel = panel;
             this.button = button;
             this.movie = movie;
+            this.model = model;
         }
         public void actionPerformed(ActionEvent e) {
             panel.remove(button);
             panel.updateUI();
 
-            int y = 280;
             for(int i = 1; i < movie.getComments().size(); i++) {
-                JLabel comment = new JLabel(movie.getComments().get(i).getNickname() + ": "
-                        + movie.getComments().get(i).getComment());
-                comment.setFont(new Font("Serif", Font.PLAIN, 20));
-                y += 40;
-                comment.setBounds(0, y, 800, 50);
-                panel.add(comment);
+                Object[] comment = {movie.getComments().get(i).getNickname() + ": "
+                        + movie.getComments().get(i).getComment()};
+                model.addRow(comment);
             }
         }
     }
