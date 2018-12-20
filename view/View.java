@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class View extends JPanel {
     private JTextField searchField;
     private JPanel mainPanel = this;
+    Movie movie = DatabaseManager.parseDataFrom("movies.json");
 
     public View() {
         super();
@@ -44,11 +45,11 @@ public class View extends JPanel {
         }
 
         public void actionPerformed(ActionEvent e) {
-            // Database den gelecek datalar...
+
+
+
             ArrayList<String> movieList = new ArrayList<>();
-            movieList.add("Fast and the Furious 1");
-            movieList.add("Fast and the Furious 2");
-            movieList.add("Fast and the Furious 3");
+            movieList.add(movie.getName());
 
             String[] columns = {"Search Results"};
             DefaultTableModel model1 = new DefaultTableModel(columns, 0);
@@ -96,24 +97,18 @@ public class View extends JPanel {
             int row = table.getSelectedRow();
             String selectedMovieName = table.getModel().getValueAt(row, column).toString();
 
-            // gecici film objesi...
-            Actor Ege = new Actor("Ege", 21, "28.08.1997");
-            Actor Ataberk = new Actor("Ataberk", 21, "28.08.1997");
-            Director Ali = new Director("Ali", 60, "23.23.1889");
-            Movie movie = new Movie.Builder("12.08.2018", selectedMovieName).withDirector(Ali).withRating(Rating.SEVEN).withGenre(Genre.SCIFI).withRuntime(120.0).build();
+
+
+
             Comment a = new Comment("egowic");
             Comment b = new Comment("atosberk");
             Comment c = new Comment("Barkın");
             a.setComment("Guzel film");
             b.setComment("Berbat bir film");
             c.setComment("vay be inanılmaz bir film");
-            Ali.addMovie(movie);
-            movie.addActor(Ege);
-            movie.addActor(Ataberk);
             movie.addComment(a);
             movie.addComment(b);
             movie.addComment(c);
-
             panel.removeAll();
             panel.updateUI();
 
@@ -122,7 +117,7 @@ public class View extends JPanel {
             mdbLabel.setFont(new Font("Serif", Font.BOLD, 40));
             mdbLabel.setBounds(0, 0, 100, 50);
 
-            JLabel ratingLabel = new JLabel("Rating: " + movie.getRating());
+            JLabel ratingLabel = new JLabel("Rating: " +  movie.getRating().toString());
             ratingLabel.setForeground(Color.RED);
             ratingLabel.setFont(new Font("Serif", Font.ITALIC, 20));
             ratingLabel.setBounds(650, 10, 100, 50);
@@ -132,7 +127,7 @@ public class View extends JPanel {
             movieNameLabel.setFont(new Font("Serif", Font.PLAIN, 25));
             movieNameLabel.setBounds(250, 60, 800, 50);
 
-            JLabel basicInfoLabel = new JLabel(movie.getRuntime() + "min" + " | " + movie.getGenre() + " | " +
+            JLabel basicInfoLabel = new JLabel(movie.getRuntime() + "min" + " | " + movie.getGenre().toString() + " | " +
                     movie.getReleaseDate());
             basicInfoLabel.setFont(new Font("Serif", Font.PLAIN, 20));
             basicInfoLabel.setBounds(250, 110, 800, 50);

@@ -13,6 +13,7 @@ public class DatabaseManager {
             JSONArray arr = (JSONArray) jsonObject.get("director");
             Director dir = new Director((String) arr.get(0),(double) arr.get(1), (String) arr.get(2));
             Movie movie = new Movie.Builder((String) jsonObject.get("release_date"), (String) jsonObject.get("name")).withGenre(genreConverter((String)jsonObject.get("genre"))).withRating(ratingConverter((String) jsonObject.get("rating"))).withRuntime((double) jsonObject.get("runtime")).withDirector(dir).build();
+            dir.addMovie(movie);
             JSONArray actorArr = (JSONArray) jsonObject.get("actors");
             loadActors(actorArr, movie);
             return movie;
