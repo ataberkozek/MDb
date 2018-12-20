@@ -98,7 +98,7 @@ public class View extends JPanel {
             Actor Ege = new Actor("Ege", 21, "28.08.1997");
             Actor Ataberk = new Actor("Ataberk", 21, "28.08.1997");
             Director Ali = new Director("Ali", 60, "23.23.1889");
-            Movie movie = new Movie.Builder(Genre.SCIFI, selectedMovieName).withDirector(Ali).withRating(Rating.SEVEN).withReleaseDate("12.08.2018").withRuntime(120.0).build();
+            Movie movie = new Movie.Builder("12.08.2018", selectedMovieName).withDirector(Ali).withRating(Rating.SEVEN).withGenre(Genre.SCIFI).withRuntime(120.0).build();
             Comment a = new Comment("egowic");
             Comment b = new Comment("atosberk");
             Comment c = new Comment("Barkın");

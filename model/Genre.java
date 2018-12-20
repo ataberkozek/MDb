@@ -7,6 +7,7 @@ public enum Genre {
         this.title = title;
     }
 
+
     @Override
     public String toString() {
         return title;

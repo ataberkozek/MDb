@@ -93,22 +93,22 @@ public final class Movie {
     public static class Builder {
 
         private final String name;
-        private String releaseDate;
-        private final Genre genre;
+        private final String releaseDate;
+        private  Genre genre;
         private Rating rating;
         private double runtime;
         private Director director;
 
-        public Builder(Genre genre, String name) {
-            if (genre == null || name == null) {
-                throw new IllegalArgumentException("Name or genre cannot be empty");
+        public Builder(String releaseDate, String name) {
+            if (releaseDate == null || name == null) {
+                throw new IllegalArgumentException("Name or release date cannot be empty");
             }
-            this.genre = genre;
+            this.releaseDate = releaseDate;
             this.name = name;
         }
 
-        public Builder withReleaseDate(String releaseDate) {
-            this.releaseDate = releaseDate;
+        public Builder withGenre(Genre genre) {
+            this.genre = genre;
             return this;
         }
 

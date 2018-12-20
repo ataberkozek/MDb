@@ -7,7 +7,7 @@ public class Gui {
 
         JFrame frame = new JFrame("Project");
         Director Ali = new Director("Ali", 60, "23.23.1889");
-        Movie Venom = new Movie.Builder(Genre.SCIFI, "Venom").withDirector(Ali).withRating(Rating.SEVEN).withReleaseDate("12.08.2018").withRuntime(120.0).build();
+        Movie Venom = new Movie.Builder("12.08.2018", "Venom").withDirector(Ali).withRating(Rating.SEVEN).withGenre(Genre.SCIFI).withRuntime(120.0).build();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 500);
