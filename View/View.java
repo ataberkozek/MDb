@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-//aaa
+
 public class View extends JPanel {
     private JTextField searchField;
     private JPanel mainPanel = this;
