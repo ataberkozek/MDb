@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c66c1ad-587e-4b22-8ffc-1c6008fd8e41" name="Default Changelist" comment="Handlers are renamed.">
+    <list default="true" id="4c66c1ad-587e-4b22-8ffc-1c6008fd8e41" name="Default Changelist" comment="DONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MDb.iml" afterPath="$PROJECT_DIR$/MDb.iml" />
-      <change beforePath="$PROJECT_DIR$/model/Actor.java" afterPath="$PROJECT_DIR$/Model/Actor.java" />
-      <change beforePath="$PROJECT_DIR$/model/Comment.java" afterPath="$PROJECT_DIR$/Model/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/model/DatabaseManager.java" afterPath="$PROJECT_DIR$/Model/DatabaseManager.java" />
-      <change beforePath="$PROJECT_DIR$/model/Director.java" afterPath="$PROJECT_DIR$/Model/Director.java" />
-      <change beforePath="$PROJECT_DIR$/model/Genre.java" afterPath="$PROJECT_DIR$/Model/Genre.java" />
-      <change beforePath="$PROJECT_DIR$/model/Main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/model/Movie.java" afterPath="$PROJECT_DIR$/Model/Movie.java" />
-      <change beforePath="$PROJECT_DIR$/model/Rating.java" afterPath="$PROJECT_DIR$/Model/Rating.java" />
-      <change beforePath="$PROJECT_DIR$/view/Gui.java" afterPath="$PROJECT_DIR$/View/Gui.java" />
-      <change beforePath="$PROJECT_DIR$/view/View.java" afterPath="$PROJECT_DIR$/View/View.java" />
+      <change beforePath="$PROJECT_DIR$/View/Gui.java" afterPath="$PROJECT_DIR$/View/Gui.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Director.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Director.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/Director.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="519">
@@ -95,8 +85,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-549">
-              <caret line="191" column="99" lean-forward="false" selection-start-line="191" selection-start-column="99" selection-end-line="191" selection-end-column="99" />
+            <state relative-caret-position="475">
+              <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2733#2734#0" expanded="true" />
@@ -106,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/View/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,6 +133,7 @@
     <findStrings>
       <find>commen</find>
       <find>handler4</find>
+      <find>panel.</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -184,6 +175,8 @@
         <option value="$PROJECT_DIR$/model/Actor.java" />
         <option value="$PROJECT_DIR$/view/Gui.java" />
         <option value="$PROJECT_DIR$/view/View.java" />
+        <option value="$PROJECT_DIR$/View/View.java" />
+        <option value="$PROJECT_DIR$/View/Gui.java" />
       </list>
     </option>
   </component>
@@ -414,11 +407,19 @@
       <option name="project" value="LOCAL" />
       <updated>1545372987771</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DONE">
+      <created>1545373284109</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1545373284109</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -428,12 +429,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23603192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23603192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12996778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1283566" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -489,7 +490,8 @@
     <MESSAGE value="JSON implementation finished." />
     <MESSAGE value="commends and some unused items deleted" />
     <MESSAGE value="Handlers are renamed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Handlers are renamed." />
+    <MESSAGE value="DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="DONE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,10 +883,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/View/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="191" column="99" lean-forward="false" selection-start-line="191" selection-start-column="99" selection-end-line="191" selection-end-column="99" />
+        <state relative-caret-position="475">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2733#2734#0" expanded="true" />
@@ -896,18 +906,10 @@
     <entry file="file://$PROJECT_DIR$/View/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
